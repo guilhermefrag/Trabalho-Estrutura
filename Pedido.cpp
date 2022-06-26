@@ -43,6 +43,8 @@ void imprimeMenu(string cardapio[]){
     cout << "11 - Faturar Pedido" << endl;
     cout << "12 - Quantidade de Pedidos" << endl;
     cout << "13 - Ultimo Pedido Feito" << endl;
+    cout << "14 - Primeiro Pedido Feito" << endl;
+    cout << "15 - Insere no Fim da Lista" << endl;
     cout << "---------------------------------";
 }
 
@@ -98,16 +100,19 @@ void retornaUltimo(queue<Pedido> &pedidos){
     cout << "---------------------------------";
 }
 
-void retornaPedido(queue<Pedido> &pedidos){
-    int codigoPedido;
-    
-    cout << "Digite o codigo do pedido: ";
-    cin >> codigoPedido;
-    for(int i = 0; i < pedidos.size(); i++){
-        if(pedidos.front().codPedido == codigoPedido){
-            pedidos.pop();
-        }
-    }
+void retornaPrimeiro(queue<Pedido> &pedidos){
+    cout << "---------------------------------";
+    cout << "Primeiro pedido: " << endl;
+    cout << "Codigo do pedido: " << pedidos.front().codPedido << endl;
+    cout << "Codigo do lanche: " << pedidos.front().codLanche << endl;
+    cout << "Valor do pedido: " << pedidos.front().valor << endl;
+    cout << "Descricao do pedido: " << pedidos.front().descricao << endl;
+    cout << "Nome do cliente: " << pedidos.front().nomeCliente << endl;
+    cout << "---------------------------------";
+}
+
+void insereFinal(queue<Pedido> &pedidos, Pedido pedido){
+    pedidos.push(pedido);
 }
 
 int main() {
@@ -177,6 +182,10 @@ int main() {
             //Ultimo Pedido Feito
             case 13:
                 retornaUltimo(pedidos);
+                break;
+            //Primeiro Pedido Feito
+            case 14:
+                retornaPrimeiro(pedidos);
                 break;
         }
     }while(opcao != 0);
