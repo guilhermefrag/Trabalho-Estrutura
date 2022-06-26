@@ -25,7 +25,7 @@ class Pedido{
             this->valor = 0;
       }
       
-      ~Pedido() { //Destruidor ???????????? só deixar em branco
+      ~Pedido() { //Destruidor ???????????? só deixar em branco e não deletar
       }
 
       void print() { //isso a gente nem ta usando
@@ -44,7 +44,6 @@ void imprimeMenu(string cardapio[]){
     cout << "12 - Quantidade de Pedidos" << endl;
     cout << "13 - Ultimo Pedido Feito" << endl;
     cout << "14 - Primeiro Pedido Feito" << endl;
-    cout << "15 - Insere no Fim da Lista" << endl;
     cout << "---------------------------------";
 }
 
