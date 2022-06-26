@@ -85,6 +85,7 @@ void quantiadePedido(queue<Pedido> &pedidos){
 }
 
 void faturaPedido(queue<Pedido> &pedido){
+    cout << "Faturando Pedido...." << endl;
     pedido.pop();
 }
 
@@ -171,7 +172,6 @@ int main() {
                 break;
             //Faturar Pedido(Primeiro da Lista)
             case 11:
-                cout << "Faturando Pedido...." << endl;
                 faturaPedido(pedidos);
                 break;
             //Quantidade de Pedidos
